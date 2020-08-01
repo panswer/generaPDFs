@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+    <link rel="stylesheet" href="./css/styleBase.css">
+    <style>
+        body {
+            width: 2480px;
+            height: 3508px;
+        }
+        
+        li {
+            list-style-position: inside;
+        }
+        
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+        }
+        
+        .portada {
+            text-decoration: overline underline;
+            height: 100%;
+            font-size: 100px;
+            align-items: center;
+        }
+        
+        .title {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        
+        .content {
+            font-size: 50px;
+            height: 100%;
+            width: 100%;
+            align-items: start;
+        }
+        
+        .content>.title {
+            font-size: 4rem;
+        }
+        
+        .item {
+            display: grid;
+            grid-auto-flow: column;
+            width: 100%;
+        }
+        
+        .item>.temma {
+            text-align: left;
+        }
+        
+        .item>.page {
+            text-align: right;
+        }
+        
+        .index>.separate {
+            background-color: green;
+            text-align: right;
+        }
+        
+        .form>.question {
+            display: flex;
+        }
+        
+        .form>.question>.answer-item {
+            margin-left: 10px;
+        }
+        
+        .form>.question:not(:first-child) {
+            margin-top: 20px;
+        }
+        
+        .contract {
+            background-color: gray;
+            width: 100%;
+            padding-top: 50px;
+        }
+        
+        .contract>.contract-info {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #fff;
+            width: 90%;
+            padding: 5px;
+        }
+        
+        .contract-info>.title {
+            margin-top: 5px;
+            text-align: left;
+        }
+        
+        .contract-info>:not(.title) {
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        .contract-info>h5,
+        h6 {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contract-info>.subtitle {
+            text-decoration: solid;
+        }
+        
+        .contract-info>.text-center {
+            text-align: center;
+            width: 100%;
+        }
+        
+        li>.sub-list {
+            list-style: lower-alpha;
+        }
+        
+        .count-number-3 {
+            list-style: none;
+        }
+        
+        .inline {
+            display: inline;
+            text-decoration: underline;
+        }
+        
+        .sub-list-roman {
+            list-style: upper-roman;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container portada">
+        <h1 class="title">Invest Process</h1>
+    </div>
+</body>
+
+</html>

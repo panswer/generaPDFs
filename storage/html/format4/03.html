@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 3</title>
+    <link rel="stylesheet" href="./css/styleBase.css">
+    <style>
+        body {
+            width: 2480px;
+            height: 3508px;
+        }
+        
+        li {
+            list-style-position: inside;
+        }
+        
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .portada {
+            text-decoration: overline underline;
+            height: 100%;
+            font-size: 100px;
+            align-items: center;
+        }
+        
+        .title {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        
+        .content {
+            font-size: 50px;
+            height: 100%;
+            width: 100%;
+            align-items: start;
+        }
+        
+        .content>.title {
+            font-size: 4rem;
+        }
+        
+        .item {
+            display: grid;
+            grid-auto-flow: column;
+            width: 100%;
+        }
+        
+        .item>.temma {
+            text-align: left;
+        }
+        
+        .item>.page {
+            text-align: right;
+        }
+        
+        .index>.separate {
+            background-color: green;
+            text-align: right;
+        }
+        
+        .form>.question {
+            display: flex;
+        }
+        
+        .form>.question>.answer-item {
+            margin-left: 10px;
+        }
+        
+        .form>.question:not(:first-child) {
+            margin-top: 20px;
+        }
+        
+        .contract {
+            background-color: gray;
+            width: 100%;
+            padding-top: 50px;
+        }
+        
+        .contract>.contract-info {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #fff;
+            width: 90%;
+            padding: 5px;
+        }
+        
+        .contract-info>.title {
+            margin-top: 5px;
+            text-align: left;
+        }
+        
+        .contract-info>:not(.title) {
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        .contract-info>h5,
+        h6 {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contract-info>.subtitle {
+            text-decoration: solid;
+        }
+        
+        .contract-info>.text-center {
+            text-align: center;
+            width: 100%;
+        }
+        
+        li>.sub-list {
+            list-style: lower-alpha;
+        }
+        
+        .count-number-3 {
+            list-style: none;
+        }
+        
+        .inline {
+            display: inline;
+            text-decoration: underline;
+        }
+        
+        .sub-list-roman {
+            list-style: upper-roman;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h3 class="title">Identification and Acknowledgements</h3>
+        <div class="question">
+            <div class="question-item">
+                <p>Are you an U.S. Citizen or U.S. Legal Resident?</p>
+            </div>
+            <div class="answer-item">
+                {{question1}}
+            </div>
+        </div>
+        <div class="paragram">
+            <p>for more information on investor classification and to determine your own classification: https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/updated-3</p>
+        </div>
+        <div class="question">
+            <div class="question-item-select">I have read the educational materials and understand that Barriowealth does not offer or provide any investment advice and that I am solely responsible for making my own investment decisions regarding the investments on the Barriowealth platform.</div>
+            <div class="question-item-select"> I have read and agree to the terms set forth in the Terms & Conditions and the Privacy Policy.</div>
+            <div class="question-item-select">I have read and understand the following:
+                <ol>
+                    <li>This site’s technology is owned by Barriowealth LLC, and Barriowealth is not a registered broker-dealer and any securities offered on this platform have not been reviewed or approved by any federal or state securities regulatory authority,
+                        including, but not limited to, the SEC and FINRA.</li>
+                    <li>The securities listed on this platform are offered exclusively by the issuer of such securities without input or recommendation by Barriowealth LLC, or its affiliates (collectively, the “Barriowealth Parties”). The Barriowealth Parties
+                        have not verified the adequacy, accuracy or completeness of any information provided by the issuers offering investments on this site. In making any investment decisions, you must rely on your own examination of the issuer and
+                        the terms of the offering in determining the risks involved in any investment.</li>
+                    <li>If you are investing in a Regulation Crowdfunding offering, your total investments in Regulation Crowdfunding offerings during the past 12-months, across all platforms including this investment, must not exceed the investment limit
+                        applicable to your income or net worth and may not exceed $107,000.</li>
+                    <li>If you are investing under Rule 506(c) of Regulation D, your status as an “Accredited Investor” will also need to be verified and you will be asked to provide documentation supporting your income, net worth, revenue, or net assets
+                        or a letter from a qualified advisor (e.g. Registered Investment Advisor or Registered Broker Dealer). The Barriowealth Parties do not recommend or endorse any of the offerings on this site nor do they determine the appropriateness
+                        of any investment for a particular investor or class of investors.</li>
+                    <li>I understand that investing in private companies and small businesses is risky and that my entire investment could be lost; I can afford to lose 100% of my investment.</li>
+                    <li> I acknowledge that I can cancel my investment at any time up until 48 hours prior to the target offering deadline.</li>
+                    <li>It may be difficult or impossible to resell securities you purchase.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

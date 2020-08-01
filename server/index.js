@@ -22,6 +22,8 @@ if (fs.existsSync(pathENV)) {
 } else {
     console.log(`Error en direccion: ${pathENV}`);
 }
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 /* 
     Routes

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 6</title>
+    <link rel="stylesheet" href="./css/styleBase.css">
+</head>
+
+<body>
+    <div class="content">
+        <h3 class="title">Investment Information</h3>
+        <div class="form">
+            <div class="question">
+                <div class="question-item">How much do you want to invest in this offering? </div>
+                <div class="answer-item">{{mountInvest}}</div>
+            </div>
+        </div>
+        {{financialAdvisor}}
+        <div class="form">
+            <div class="question">
+                <div class="question-item">Annual Income: </div>
+                <div class="answer-item">{{annualIncome}}</div>
+            </div>
+            <div class="question">
+                <div class="question-item">Net Worth: </div>
+                <div class="answer-item">{{netWorth}}</div>
+            </div>
+        </div>
+        <div class="question">
+            <h4>Total amount in USD invested in Regulation Crowdfunding offerings in past 12 months:</h4>
+            <div class="question-item-select">
+                I certify that I have not exceeded my annual investment caps as permitted by SEC rules. Click here to validate current investment caps. (Use link in next column)
+            </div>
+        </div>
+        <div class="question">
+            <h4>Substitute Form W-9 Statement Under penalty of perjury, by accepting the agreement below I certify that I have provided my correct taxpayer identification number, and:</h4>
+            <div class="question-item-select">
+                I am exempt from backup witholding.
+            </div>
+            <div class="question-item-select">
+                I am subject to backup withholding. (Only check this option if you've been notified by the IRS that you are subject to backup withholding).
+            </div>
+        </div>
+        <h3 class="title">Transaction Processing</h3>
+        <div class="question">
+            <div class="question-item-select">In addition to your investment amount, a non-refundable transaction fee of $3.50 will be assessed to cover processing expenses related to this investment. As such, to complete this investment commitment, you will need to transfer a total of
+                {{mountInvest}} + 3.50.</div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -3,6 +3,14 @@ const path = require('path');
 const fs = require('fs');
 const lorem = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora incidunt ullam, laboriosam velit vero itaque. Ea fugiat minus quasi temporibus, quae facere quam cum hic modi inventore omnis non quos deserunt similique magnam quia repellendus fugit rerum aut suscipit? Quibusdam harum nulla praesentium commodi, unde, perspiciatis, porro cum necessitatibus reprehenderit dolores voluptates incidunt neque voluptatem architecto in quaerat molestiae iste dignissimos qui magni accusantium doloremque dolore? Dolorum a architecto vero veniam amet nemo tempore dolore cum aliquid, dolores in optio ad consequatur, pariatur, dicta quisquam ea nesciunt natus delectus magni eaque quidem nostrum praesentium sint. Repellendus saepe quos modi cupiditate?'
 
+const {
+    CreateImageWithHTML
+} = require('../helpers/createImages');
+
+const {
+    CreatePDFWithImages
+} = require('../helpers/createPDFWithImage');
+
 const GenerateMethod1 = (req, res) => {
     // Create a document
     const doc = new PDFDocument();
@@ -101,6 +109,69 @@ const GenerateMethod1 = (req, res) => {
     });
 }
 
+const GenerateMethod2 = (req, res) => {
+    try {
+        let folderSeed = path.resolve(__dirname, '../../storage/images');
+
+        if (fs.existsSync(folderSeed)) {
+            let nameImages = fs.readdirSync(folderSeed).filter(name => {
+                let format = path.parse(name);
+                return Boolean(format.ext);
+            });
+
+            let doc = new PDFDocument();
+
+            let newFolderName = `images${new Date().getTime()}`;
+            let newFolder = `${folderSeed}/${newFolderName}`;
+            let name = `image.pdf`;
+
+            fs.mkdirSync(newFolder);
+
+            doc.pipe(fs.createWriteStream(`${newFolder}/${name}`));
+
+            console.log(nameImages);
+            for (let i = 0; i < nameImages.length; i++) {
+                doc.image(`${folderSeed}/${nameImages[i]}`);
+            }
+
+            doc.end();
+
+            return res.status(202).json({
+                nameImages
+            });
+        } else {
+            return res.status(500).json({
+                message: `Error en path: ${folderSeed}`
+            });
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json(err);
+    }
+}
+
+const GenerateMethod3 = async(req, res) => {
+    try {
+        let { folder } = await CreateImageWithHTML(req.body.folder, req.body.content);
+
+        await CreatePDFWithImages(folder, req.body.scale, req.body.position);
+
+        return res.status(202).json({
+            message: 'Success'
+        });
+    } catch (err) {
+        let code = Number(err.code) > 400 ? err.code : 404;
+
+        code === 404 ? console.log(err) : {};
+
+        return res.status(code).json({
+            message: code === 404 ? 'Page Not Found.' : err.message
+        });
+    }
+}
+
 module.exports = {
-    GenerateMethod1
+    GenerateMethod1,
+    GenerateMethod2,
+    GenerateMethod3
 }
